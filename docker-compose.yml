@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/tmp/md_results
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+```
+
+**`.gitignore`**
+```
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+.env
+.venv
+venv/
+data/
+*.pdb
+*.gro
+*.tpr
+*.xtc
+*.xvg
